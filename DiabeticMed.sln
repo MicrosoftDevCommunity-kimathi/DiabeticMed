@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabeticMed", "DiabeticMed\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabeticMed.UnitTests", "DiabeticMed.UnitTests\DiabeticMed.UnitTests.csproj", "{CD580A6B-BF5D-4665-B4E3-EBE6C75FE7E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client.medmachinelearning", "client.medmachinelearning\client.medmachinelearning.csproj", "{3CB72794-D101-455F-9C45-566763A65669}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CD580A6B-BF5D-4665-B4E3-EBE6C75FE7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD580A6B-BF5D-4665-B4E3-EBE6C75FE7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD580A6B-BF5D-4665-B4E3-EBE6C75FE7E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB72794-D101-455F-9C45-566763A65669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB72794-D101-455F-9C45-566763A65669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB72794-D101-455F-9C45-566763A65669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB72794-D101-455F-9C45-566763A65669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

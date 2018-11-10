@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using DiabeticMed.Data;
 using DiabeticMed.Models;
 using DiabeticMed.Services;
+using DiabeticMed.UnitTests.MockData;
 
 namespace DiabeticMed
 {
@@ -35,6 +36,7 @@ namespace DiabeticMed
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IMedicPatientRepository, FakeMedicPatientsRepository>();
 
             services.AddMvc();
         }
@@ -61,7 +63,7 @@ namespace DiabeticMed
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=MedicPatient}/{action=Index}/{id?}");
             });
         }
     }
