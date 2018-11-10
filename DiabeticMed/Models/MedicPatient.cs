@@ -9,6 +9,7 @@ namespace DiabeticMed.Models
     public class MedicPatient
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         [Required]
         public int Pregnanicies { get; set; }
         [Required]
@@ -24,11 +25,13 @@ namespace DiabeticMed.Models
         [Required]
         public float DiabeticPadiac  { get; set; }
         [Required]
-        public float Age { get; set; }
+        public int Age { get; set; }
         [Required]
         public string Image { get; set; }
         [Required]
         public float Diabetic { get; set; }
+
+        public bool Isdiabetic { get; set; } = false;
 
     }
 }
