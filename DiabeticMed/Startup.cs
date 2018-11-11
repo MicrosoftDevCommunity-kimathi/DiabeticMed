@@ -65,6 +65,12 @@ namespace DiabeticMed
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=MedicPatient}/{action=Index}/{id?}");
+
+                //routes.MapRoute(
+                //    name: "paginations",
+                //    template: "MedicPatients/Page{productPage}",
+                //    defaults: new { Controller = "Home", action = "List" }
+                //);
             });
           SeedData.EnsurePatientPopulated(app);
         }
