@@ -59,19 +59,19 @@ namespace DiabeticMed
             app.UseStaticFiles();
 
             app.UseAuthentication();
+            app.UseMvcWithDefaultRoute();
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=MedicPatient}/{action=Index}/{id?}");
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=MedicPatient}/{action=Index}/{id?}");
-
-                //routes.MapRoute(
-                //    name: "paginations",
-                //    template: "MedicPatients/Page{productPage}",
-                //    defaults: new { Controller = "Home", action = "List" }
-                //);
-            });
+            //    //routes.MapRoute(
+            //    //    name: "paginations",
+            //    //    template: "MedicPatients/Page{productPage}",
+            //    //    defaults: new { Controller = "Home", action = "List" }
+            //    //);
+       // });
           SeedData.EnsurePatientPopulated(app);
         }
     }
