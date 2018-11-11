@@ -9,7 +9,7 @@ namespace DiabeticMed.Services
 {
    public interface IMedicPatientRepository
    {
-       IQueryable AllMedicPatients { get; }
+       IQueryable<MedicPatient> AllMedicPatients { get; }
        IEnumerable<MedicPatient> GetDiabetics();
        IEnumerable<MedicPatient> GetnonDiabetics();
        MedicPatient GetMedicPatient(int id);

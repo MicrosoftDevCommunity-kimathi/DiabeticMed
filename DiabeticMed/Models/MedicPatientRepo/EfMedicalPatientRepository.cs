@@ -17,7 +17,7 @@ namespace DiabeticMed.Models.MedicPatientRepo
             _context = context;
         }
 
-        public IQueryable AllMedicPatients => _context.MedicPatients;
+        public IQueryable<MedicPatient> AllMedicPatients => _context.MedicPatients;
         public IEnumerable<MedicPatient> GetDiabetics()
         {
             return _context.MedicPatients.Where(p => p.Isdiabetic.Equals(true));

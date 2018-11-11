@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DiabeticMed.Data;
 using DiabeticMed.Models;
+using DiabeticMed.Models.MedicPatientRepo;
 using DiabeticMed.Services;
 using DiabeticMed.UnitTests.MockData;
 
