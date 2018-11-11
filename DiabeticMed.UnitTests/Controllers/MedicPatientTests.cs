@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
-using DiabeticMed.Controllers;
-using DiabeticMed.Models;
-using DiabeticMed.Models.MedicPatientRepo;
-using DiabeticMed.Services;
-using DiabeticMed.UnitTests.MockData;
+using DiabeticProject.Controllers;
+using DiabeticProject.Models;
+using DiabeticProject.Models.MedicPatientRepo;
+using DiabeticProject.Services;
 using Moq;
 using Xunit;
+using FakeMedicPatientsRepository = DiabeticMed.UnitTests.MockData.FakeMedicPatientsRepository;
 
 namespace DiabeticMed.UnitTests.Controllers
 {

@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiabeticMed\DiabeticMed.csproj" />
+    <ProjectReference Include="..\DiabeticProject\DiabeticProject.csproj" />
   </ItemGroup>
 
 </Project>

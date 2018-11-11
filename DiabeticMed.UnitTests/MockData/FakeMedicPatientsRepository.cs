@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DiabeticMed.Models;
-using DiabeticMed.Services;
+using DiabeticProject.Models.MedicPatientRepo;
+using DiabeticProject.Services;
 
 namespace DiabeticMed.UnitTests.MockData
 {
