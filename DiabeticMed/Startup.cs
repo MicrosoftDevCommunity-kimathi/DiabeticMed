@@ -37,7 +37,7 @@ namespace DiabeticMed
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-            services.AddTransient<IMedicPatientRepository, FakeMedicPatientsRepository>();
+            services.AddTransient<IMedicPatientRepository, EfMedicalPatientRepository>();
 
             services.AddMvc();
         }
@@ -66,6 +66,7 @@ namespace DiabeticMed
                     name: "default",
                     template: "{controller=MedicPatient}/{action=Index}/{id?}");
             });
+          SeedData.EnsurePatientPopulated(app);
         }
     }
 }
