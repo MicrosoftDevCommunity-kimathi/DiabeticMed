@@ -12,15 +12,18 @@ namespace DiabeticMed.Controllers
     public class MedicPatientController : Controller
     {
         private IMedicPatientRepository _repository;
+        public int Pagesize = 4;
 
         public MedicPatientController(IMedicPatientRepository repository)
         {
             _repository = repository;
         }
         // GET: /<controller>/
-        public IActionResult Index()
+        public ViewResult Index(int productPage=1)
         {
-            return View(_repository.AllMedicPatients);
+            return View(_repository.AllMedicPatients
+                .OrderBy(p=>p.Name).Skip((productPage-1)*Pagesize)
+                .Take(Pagesize));
         }
     }
 }
