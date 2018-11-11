@@ -32,18 +32,14 @@ namespace DiabeticProject.Controllers
             return View();
         }
          [HttpPost]
-        public IActionResult Result([FromBody] MedicPatient medicPatient)
-        {
-            if (!ModelState.IsValid)
-            {
-                RedirectToAction("Index");
-            }
-
+        public IActionResult Result(MedicPatient medicPatient)
+        {   
+     
             _context.MedicPatients.Add(medicPatient);
             _context.SaveChanges();
             var result = _context.MedicPatients.Find(medicPatient);
 
-            return View(result);
+            return View("/index");
         }
 
         public IActionResult Error()
