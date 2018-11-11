@@ -9,7 +9,7 @@ namespace DiabeticMed.UnitTests.MockData
 {
     public class FakeMedicPatientsRepository: IMedicPatientRepository
     {
-        public IQueryable<MedicPatient> Product =>new List<MedicPatient>
+        public IQueryable<MedicPatient> AllMedicPatients =>new List<MedicPatient>
         {
            new MedicPatient{Id = 1,Name = "Edwin",Age = 21,Pregnanicies = 2,BMi = 34,Diabetic = 1.343F,DiabeticPadiac = 46,DiasotolicBloodPressure = 35,Image = @"http://google.com",Isdiabetic = false},
            new MedicPatient{Id = 2,Name = "Jane",Age = 13,Pregnanicies = 0,BMi = 34,Diabetic = 45,DiabeticPadiac = 46,DiasotolicBloodPressure = 35,Image = @"http://google.com",Isdiabetic = true},
@@ -32,17 +32,17 @@ namespace DiabeticMed.UnitTests.MockData
 
         public IEnumerable<MedicPatient> GetDiabetics()
         {
-            return Product.Where(p => p.Isdiabetic == true);
+            return AllMedicPatients.Where(p => p.Isdiabetic == true);
         }
 
         public IEnumerable<MedicPatient> GetnonDiabetics()
         {
-            return Product.Where(p => p.Isdiabetic == false);
+            return AllMedicPatients.Where(p => p.Isdiabetic == false);
         }
 
         public MedicPatient GetMedicPatient(int id)
         {
-            return Product.SingleOrDefault(p => p.Id == id);
+            return AllMedicPatients.SingleOrDefault(p => p.Id == id);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace DiabeticMed.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            return View(_repository.AllMedicPatients);
         }
     }
 }

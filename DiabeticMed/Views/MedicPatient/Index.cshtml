@@ -1,8 +1,11 @@
-﻿@model object
-
-@{
-	ViewBag.Title = "title";
-	Layout = "_Layout";
+﻿@model IEnumerable<MedicPatient>
+@foreach (var p in Model)
+{
+	<div>
+		<h3>@p.Name</h3>
+		@p.Age.ToString()
+		<h4>@p.Isdiabetic</h4>
+	</div>
 }
 
-<h2>title</h2>
+
