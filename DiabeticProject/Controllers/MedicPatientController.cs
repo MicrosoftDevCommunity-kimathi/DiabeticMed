@@ -37,5 +37,18 @@ namespace DiabeticProject.Controllers
             };
             return View(model);
         }
+
+        public ViewResult Diabetic()
+        {
+            return View(_repository.GetDiabetics());
+        }
+
+        public ViewResult NonDiabetic()
+        {
+            return View(_repository.GetnonDiabetics());
+        }
+
+
+
     }
 }
