@@ -1,5 +1,5 @@
-﻿@model IEnumerable<MedicPatient>
-@foreach (var p in Model)
+﻿@model DiabeticMed.Models.MedicPatientRepo.PatientsMEdListviewModel
+@foreach (var p in Model.Patients)
 {
 	<div>
 		<h3>@p.Name</h3>

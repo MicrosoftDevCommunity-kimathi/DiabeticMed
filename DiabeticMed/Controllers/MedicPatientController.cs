@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DiabeticMed.Models;
+using DiabeticMed.Models.MedicPatientRepo;
 using DiabeticMed.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,12 +20,22 @@ namespace DiabeticMed.Controllers
         {
             _repository = repository;
         }
+
         // GET: /<controller>/
-        public ViewResult Index(int productPage=1)
+        public ViewResult Index(int productPage = 1)
         {
-            return View(_repository.AllMedicPatients
-                .OrderBy(p=>p.Name).Skip((productPage-1)*Pagesize)
-                .Take(Pagesize));
+            var model = new PatientsMEdListviewModel()
+            {
+                Patients = _repository.AllMedicPatients.OrderBy(p => p.Name).Skip((productPage - 1) * Pagesize)
+                    .Take(Pagesize),
+                PagingInfo = new PagingInfo()
+                {
+                    CurrentPage = productPage,
+                    ItemsPerPage = Pagesize,
+                    TotalItems = _repository.AllMedicPatients.Count()
+                }
+            };
+            return View(model);
         }
     }
 }
