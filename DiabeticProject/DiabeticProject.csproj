@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <UserSecretsId>aspnet-DiabeticProject-C7501700-82FE-4F13-985A-7174CB37AC33</UserSecretsId>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
 
 

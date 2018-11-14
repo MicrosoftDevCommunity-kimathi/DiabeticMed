@@ -26,7 +26,7 @@ namespace DiabeticMed.UnitTests.Controllers
             controller.Pagesize = 3;
             //Act
             //assert
-            PatientsMEdListviewModel result=controller.Index(6).ViewData.Model as PatientsMEdListviewModel;
+            PatientsMEdListviewModel result=controller.Index(null,6).ViewData.Model as PatientsMEdListviewModel;
             MedicPatient[] patientarr = result.Patients.ToArray();
             Assert.True(patientarr.Length==1);
 
@@ -45,7 +45,7 @@ namespace DiabeticMed.UnitTests.Controllers
             };
 
             //Act
-            PatientsMEdListviewModel result=controller.Index(6).ViewData.Model as PatientsMEdListviewModel;
+            PatientsMEdListviewModel result=controller.Index(null,6).ViewData.Model as PatientsMEdListviewModel;
             //asset
             PagingInfo pageinfo = result.PagingInfo;
 

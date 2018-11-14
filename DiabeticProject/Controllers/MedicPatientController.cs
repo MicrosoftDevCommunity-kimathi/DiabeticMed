@@ -5,16 +5,18 @@ using System.Threading.Tasks;
 using DiabeticProject.Models;
 using DiabeticProject.Models.MedicPatientRepo;
 using DiabeticProject.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DiabeticProject.Controllers
 {
+    [Authorize]
     public class MedicPatientController : Controller
     {
         private IMedicPatientRepository _repository;
-        public int Pagesize = 4;
+        public int Pagesize = int.MaxValue;
 
         public MedicPatientController(IMedicPatientRepository repository)
         {
@@ -22,18 +24,19 @@ namespace DiabeticProject.Controllers
         }
 
         // GET: /<controller>/
-        public ViewResult Index(int productPage = 1)
+        public ViewResult Index(string category,int productPage = 1)
         {
             var model = new PatientsMEdListviewModel()
             {
-                Patients = _repository.AllMedicPatients.OrderBy(p => p.Name).Skip((productPage - 1) * Pagesize)
+                Patients = _repository.AllMedicPatients.OrderBy(p => p.Id).Skip((productPage - 1) * Pagesize)
                     .Take(Pagesize),
                 PagingInfo = new PagingInfo()
                 {
                     CurrentPage = productPage,
                     ItemsPerPage = Pagesize,
                     TotalItems = _repository.AllMedicPatients.Count()
-                }
+                }   ,
+              CurrentCategory = category
             };
             return View(model);
         }

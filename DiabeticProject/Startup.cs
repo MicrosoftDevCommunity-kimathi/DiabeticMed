@@ -64,6 +64,11 @@ namespace DiabeticProject
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name:"paginations",
+                    template: "MedicPatients/Page{productPage}",
+                    defaults: new { Controller = "MedicPatient" ,action = "Index"});
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
