@@ -1,4 +1,13 @@
-﻿body {
+﻿/*==  Default wesite color
+	   green:  #009a49
+	   yellow: #ff7900
+	   creamelike: #eaeaea
+	   brown:    #bf4e30
+	   whitelike #c6ccb2
+*/
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }

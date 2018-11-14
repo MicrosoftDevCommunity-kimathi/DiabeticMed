@@ -1,8 +1,21 @@
-﻿@model object
+﻿@using DiabeticProject.Models.MedicPatientRepo
+@model DiabeticProject.Models.MedicPatientRepo.MedicPatient
 
 @{
 	ViewBag.Title = "title";
 	Layout = "_Layout";
 }
 
-<h2>title</h2>
+<div class="text-center">
+	<p>
+		<h1>The result for @Model.Name </h1>
+		@if (Model.Isdiabetic == true)
+		{
+			@:Your analysis show that you are diabetic
+		}
+		else
+		{
+			@:The analysis show that you are not diabetic
+		}
+	</p>
+</div>

@@ -33,13 +33,14 @@ namespace DiabeticProject.Controllers
         }
          [HttpPost]
         public IActionResult Result(MedicPatient medicPatient)
-        {   
-     
-            _context.MedicPatients.Add(medicPatient);
-            _context.SaveChanges();
-            var result = _context.MedicPatients.Find(medicPatient);
-
-            return View("/index");
+        {
+            if (ModelState.IsValid)
+            {
+                _context.MedicPatients.Add(medicPatient);
+                _context.SaveChanges();
+            }
+           
+            return View(medicPatient);
         }
 
         public IActionResult Error()
