@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiabeticProject", "Diabetic
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MedicPatients", "MedicPatients\MedicPatients.sqlproj", "{544C2BD9-2115-45E6-8D9D-C1F8644EE687}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabeticmedApi", "DiabeticmedApi\DiabeticmedApi.csproj", "{B0FC9483-A8DD-4DF0-862A-4895FF6B564E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{544C2BD9-2115-45E6-8D9D-C1F8644EE687}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{544C2BD9-2115-45E6-8D9D-C1F8644EE687}.Release|Any CPU.Build.0 = Release|Any CPU
 		{544C2BD9-2115-45E6-8D9D-C1F8644EE687}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B0FC9483-A8DD-4DF0-862A-4895FF6B564E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FC9483-A8DD-4DF0-862A-4895FF6B564E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FC9483-A8DD-4DF0-862A-4895FF6B564E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FC9483-A8DD-4DF0-862A-4895FF6B564E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
