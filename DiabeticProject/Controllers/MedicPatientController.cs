@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DiabeticProject.Controllers
 {
-    [Authorize]
+
     public class MedicPatientController : Controller
     {
         private IMedicPatientRepository _repository;
