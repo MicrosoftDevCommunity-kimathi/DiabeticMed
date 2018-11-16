@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DiabeticmedApi.Data;
+using DiabeticmedApi.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +17,7 @@ namespace DiabeticmedApi
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,6 +28,9 @@ namespace DiabeticmedApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<DiabeticMedDbcontext>()
+                .AddDefaultTokenProviders();
             services.AddMvc();
             services.AddDbContext<DiabeticMedDbcontext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
@@ -37,7 +43,11 @@ namespace DiabeticmedApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(  routes=>
+                    routes.MapRoute(
+                name: "default",
+                template: "{controller=Home}/{action=get}/{id?}"));
+       
             SeedData.EnsurePatientPopulated(app);
         }                   
     }

@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DiabeticMed.Data;
-using DiabeticProject.Data;
 using DiabeticProject.Services;
 
 namespace DiabeticProject.Models.MedicPatientRepo

@@ -2,19 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DiabeticMed.Models;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using DiabeticProject.Data;
-using DiabeticProject.Models;
-using DiabeticProject.Models.MedicPatientRepo;
-using DiabeticProject.Services;
-using Microsoft.AspNetCore.Mvc;
 
-namespace DiabeticProject
+namespace DiabeticMed
 {
     public class Startup
     {
@@ -28,15 +22,8 @@ namespace DiabeticProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
-
-           
-
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
-            services.AddTransient<IMedicPatientRepository, EfMedicalPatientRepository>();
-
             services.AddMvc();
+            services.AddSingleton<PatientDbClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +33,6 @@ namespace DiabeticProject
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -55,15 +41,8 @@ namespace DiabeticProject
 
             app.UseStaticFiles();
 
-            app.UseAuthentication();
-
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name:"paginations",
-                    template: "MedicPatients/Page{productPage}",
-                    defaults: new { Controller = "MedicPatient" ,action = "Index"});
-
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
