@@ -1,22 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<!--Proloader-->
-<div id="preloader">
-	<div id="status">&nbsp;</div>
-</div>
+
 <!--The home section-->
-     <section id="home">
+     <section id="home" >
          <video id="home-bg-video" poster="~/video/solo.jpg" autoplay loop muted>
             <source src="~/video/solo.mp4" type="video/mp4">
-                
            <source src="~/video/solo.ogv" type="video/ogg">
         <source src="~/video/solo.webm" type="video/webm">
         </video>
         <!--Overlay-->
-        <div id="overlay"></div>
+        <div id="home-overlay"></div>
+        <!--home section-->
+        <div id="home-content" >
+            <div id="home-content-inner" class="text-center">
+                <div id="home-heading">
+                    <h1 id="home-heading-1">DiabeticMEd</h1><br>
+                    <h1 id="home-heading-2">MachineLearning <span>Analyser</span></h1>
+                </div>
+                <div id="home-text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consecte
+                    </p>
+                    <div id="home-btn">
+                        <a class="btn btn-general btn-home" shref="#about" title="StartNow" role="button">Start Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Arrow Down-->
+        <a href="#about" id="arrow-down">
+            <i class="fa fa-angle-down"></i>
+        </a>
      </section>
+<!--space-->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!--The background-->
+<section id="carousel">
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -64,7 +85,10 @@
     </a>
 </div>
 
+</section>
+
 <!--How to sections-->
+<section id="howto">
 <div class="row">
     <div class="col-md-3">
         <h2>Application uses</h2>
@@ -105,3 +129,4 @@
     </div>
 </div>
 
+</section>
