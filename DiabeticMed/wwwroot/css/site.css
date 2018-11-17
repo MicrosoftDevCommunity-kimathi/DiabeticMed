@@ -33,3 +33,41 @@
         display: none;
     }
 }
+
+/*preloader sections*/
+#preloader {
+	background-color: white;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+}
+#status {
+    background-image: url("../images/preloader/preloader.gif");
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-top: -35px;
+    margin-left: -35px;
+}
+/*---------Home--------------*/
+#home-bg-video{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    z-index: -1;
+    background: url("~/images/banner4.svg")
+}
+#home-overlay{
+    
+}
