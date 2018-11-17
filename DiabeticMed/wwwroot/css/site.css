@@ -220,7 +220,8 @@ section{
     background-color: #fff;
 }
 .about-item:hover i{
-    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
 }
 /*Smooth transitions*/
 .about-item,
@@ -267,5 +268,28 @@ section{
 .team-member:hover .team-member-overlay{
     opacity: 1;
 }
-
+/*social context*/
+ul.social-list{
+    padding: 0;
+    margin-top:20px;
+}
+ul.social-list li{
+    display: inline;
+    padding: 0;
+}
+ul.social-list li a{
+    border: 1px solid #fff;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    line-height: 35px;
+    color:#fff;
+    border-radius: 50%;
+    -webkit-transition: all 400s linear;
+    transition: all 400s linear;
+}
+ul.social-list li:nth-child(1) a:hover{
+     background: #3b5998;
+     border-color: transparent
+        }
 
