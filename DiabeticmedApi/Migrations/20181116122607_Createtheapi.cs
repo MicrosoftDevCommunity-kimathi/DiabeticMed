@@ -24,7 +24,7 @@ namespace DiabeticmedApi.Migrations
                     Name = table.Column<string>(nullable: true),
                     PlasmaGlucose = table.Column<float>(nullable: false),
                     Pregnanicies = table.Column<int>(nullable: false),
-                    Seruminium = table.Column<float>(nullable: false),
+                    Sercuminium = table.Column<float>(nullable: false),
                     TricepThickness = table.Column<float>(nullable: false)
                 },
                 constraints: table =>

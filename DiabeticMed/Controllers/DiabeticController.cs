@@ -12,13 +12,14 @@ namespace DiabeticMed.Controllers
 {
     public class DiabeticController : Controller
     {
+        private readonly string connectionstring="http://localhost:54815/api/Patients";
         public IActionResult Index()
         {
             IEnumerable<Patients> patients = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress=new Uri("http://localhost:54814/api/");
-                var responseTask = client.GetAsync("Patients");
+                client.BaseAddress=new Uri(connectionstring);
+                var responseTask = client.GetAsync("");
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
@@ -47,9 +48,9 @@ namespace DiabeticMed.Controllers
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress=new Uri("http://localhost:54814/api/");
+                client.BaseAddress=new Uri(connectionstring);
                 //httppost
-                var postTask = client.PostAsync("Patients",
+                var postTask = client.PostAsync("",
                     new StringContent(JsonConvert.SerializeObject(patient), Encoding.UTF8, "application/json"));
                 postTask.Wait();
                 var result = postTask.Result;
@@ -67,9 +68,8 @@ namespace DiabeticMed.Controllers
             Patients patient = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress=new Uri("http://localhost:54814/api/");
                 //http get
-                var response = client.GetAsync("Patient?id=" + id.ToString());
+                var response = client.GetAsync("Patients?id=" + id.ToString());
                 response.Wait();
                 var result = response.Result;
                 if (result.IsSuccessStatusCode)
@@ -90,7 +90,7 @@ namespace DiabeticMed.Controllers
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress=new Uri("http://localhost:54814/api/");
+                client.BaseAddress=new Uri(connectionstring);
                 //Http post
                 var putTask = client.PutAsync("Patients",
                     new StringContent(JsonConvert.SerializeObject(patient), Encoding.UTF8, "application/json"));
@@ -110,7 +110,7 @@ namespace DiabeticMed.Controllers
             using (var client = new HttpClient())
             {
                 //Http delete
-                var deleteTask = client.DeleteAsync($"http://localhost:54814/api/Patients/{id}");
+                var deleteTask = client.DeleteAsync($"{connectionstring}/Patients/{id}");
                 deleteTask.Wait();
                 var result = deleteTask.Result;
                 if (result.IsSuccessStatusCode)
