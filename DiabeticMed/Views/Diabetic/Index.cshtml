@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DiabeticMed.Models.Patients>
+
+@{
+	ViewBag.Title = "The layout page";
+	Layout = "_Layout";
+}
+
+<h2>All diabetic patients</h2>
+<p>@Html.ActionLink("Create New", "Create")</p>
+<table class="table table-dark">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model=>model.Id);
+			</th>
+			<th>@Html.DisplayNameFor(model=>model.Name)</th>
+			<th >@Html.DisplayNameFor(model=>model.Age)</th>
+			<th>@Html.DisplayNameFor(model=>model.Diabetic)</th>
+		</tr>
+	</thead>
+	@foreach (var p in Model)
+	{
+	<tr>
+		<td>@Html.DisplayFor(modelItem => p.Id)</td>
+		<td>@Html.DisplayFor(modelItem => p.Name)</td>
+		<td>@Html.DisplayFor(modelItem => p.Age)</td>
+		<td>@Html.DisplayFor(modelItem => p.Diabetic)</td>
+		<td>
+			@Html.ActionLink("Edit","Edit",new {id=p.Id}) |
+			@Html.ActionLink("Delete","Delete",new {id=p.Id})
+		</td>
+	</tr>
+	}
+	<tr>
+		<td>
+			@Html.ValidationSummary(true,"",new {@class="text-danger"})
+		</td>
+	</tr>
+</table>
+
+

@@ -1,0 +1,81 @@
+﻿@model DiabeticMed.Models.Patients
+
+@{
+	ViewBag.Title = "title";
+	Layout = "_Layout";
+}
+
+<h2>Check for Diabetic Result</h2>
+<div class="center-block">
+	<div class="panel panel-success">
+		<div class="panel-heading text-center"><h4>Add Patient Data</h4></div>
+		<div class="panel-body">
+			<form asp-action="Result" method="post">
+				<div asp-validation-summary="All"></div>
+				<div class="form-row">
+					<hr/>
+					@Html.ValidationSummary(true," ",new {@class="text-danger"})
+					@Html.HiddenFor(model=>model.Id)
+					<div class="form-group col-md-6">
+						<label asp-for="Name" class="control-label" placeholder="First Name">Name</label>
+						<input asp-for="Name" class="form-control" />
+					</div>
+					<div class="form-group col-md-6">
+						<label asp-for="Age" class="control-label">Age</label>
+						<input asp-for="Age" class="form-control" />
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label asp-for="BMi" class="control-label">Bmi</label>
+						<input asp-for="BMi" class="form-control" />
+					</div>
+					<div class="form-group col-md-6">
+						<label asp-for="DiabeticPadiac" class="control-label">Diabetic Padic</label>
+						<input asp-for="DiabeticPadiac" class="form-control" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label asp-for="DiasotolicBloodPressure" class="control-label">Diasotolic Blood Pressure</label>
+						<input asp-for="DiasotolicBloodPressure" class="form-control" />
+					</div>
+					<div class="form-group col-md-6">
+						<label asp-for="PlasmaGlucose" class="control-label">Placma Glucose</label>
+						<input asp-for="PlasmaGlucose" class="form-control" />
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label asp-for="Seruminium" class="control-label">Seruminium</label>
+						<input asp-for="Seruminium" class="form-control" />
+					</div>
+					<div class="form-group col-md-6">
+						<label asp-for="TricepThickness" class="control-label">Tricep Thickeness</label>
+						<input asp-for="TricepThickness" class="form-control" />
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label asp-for="Pregnanicies" class="control-label">Pregnacies </label>
+						<input asp-for="Pregnanicies" class="form-control" />
+					</div>
+					<div class="form-group col-md-6">
+						<label asp-for="PlasmaGlucose" class="control-label">Placma Glucose</label>
+						<input asp-for="PlasmaGlucose" class="form-control" />
+					</div>
+				</div>
+
+				<div class="text-center">
+					<button class="btn btn-primary " type="submit" value="submit">Submit Form</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div>
+	@Html.ActionLink("Back to list ", "Index");
+</div>>
+
+
