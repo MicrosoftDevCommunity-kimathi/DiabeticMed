@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DiabeticmedApi.Migrations
 {
-    public partial class Createtheapi : Migration
+    public partial class CloudDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,7 +24,7 @@ namespace DiabeticmedApi.Migrations
                     Name = table.Column<string>(nullable: true),
                     PlasmaGlucose = table.Column<float>(nullable: false),
                     Pregnanicies = table.Column<int>(nullable: false),
-                    Sercuminium = table.Column<float>(nullable: false),
+                    Seruminium = table.Column<float>(nullable: false),
                     TricepThickness = table.Column<float>(nullable: false)
                 },
                 constraints: table =>

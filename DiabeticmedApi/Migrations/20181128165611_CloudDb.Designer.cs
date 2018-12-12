@@ -11,8 +11,8 @@ using System;
 namespace DiabeticmedApi.Migrations
 {
     [DbContext(typeof(DiabeticMedDbcontext))]
-    [Migration("20181124151304_CreateDb")]
-    partial class CreateDb
+    [Migration("20181128165611_CloudDb")]
+    partial class CloudDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
